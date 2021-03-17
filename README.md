@@ -20,6 +20,7 @@ npm i xlsx
 ## Javascript / Vue import usage
 ```javascript
 import Import from "@/models/Import";
+
 export default {
   name: "ImportExample",
   components: {},
@@ -32,21 +33,21 @@ export default {
   methods: {
       async importFile(event) {
 
-      this.import = new Import();
+        this.import = new Import();
 
-      try {
+        try {
 
-        await this.import.uploadFile(event);
+            await this.import.uploadFile(event);
 
-        if(!this.import.isAppropriateSize()) { this.error = `File is too big.`; return false;} 
+            if(!this.import.isAppropriateSize()) { this.error = `File is too big.`; return false;} 
 
-        this.tableData = await this.import.readExcelSheets();
+            this.tableData = await this.import.readExcelSheets();
 
-        this.import.resetSelectedFile();
+            this.import.resetSelectedFile();
 
-      } catch (error) {
-        this.error = `Oops, something went wrong with importing file.`;
-      }
+        } catch (error) {
+            this.error = `Oops, something went wrong with importing file.`;
+        }
     },
   }
 ```
