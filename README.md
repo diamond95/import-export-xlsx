@@ -18,7 +18,7 @@ npm i xlsx
 ```
 
 ## Javascript / Vue import usage
-```vue
+```javascript
 import Import from "@/models/Import";
 export default {
   name: "ImportExample",
