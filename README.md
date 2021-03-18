@@ -39,12 +39,15 @@ export default {
 
             await this.import.uploadFile(event);
 
-            if(!this.import.isAppropriateSize()) { this.error = `File is too big.`; return false;} 
+            if(!this.import.isAppropriateSize()) { 
+                this.error = `File is too big.`;
+                this.import.resetSelectedFile();
+                return;
+            } 
 
             this.tableData = await this.import.readExcelSheets();
 
-            this.import.resetSelectedFile();
-
+            
         } catch (error) {
             this.error = `Oops, something went wrong with importing file.`;
         }

@@ -33,23 +33,27 @@
     }
 
     resetFileName() {
+
         this.fileName = undefined;
     }
 
     setWebkitRelativePath(path) {
 
-        this.webkitRelativePath = path
+        this.webkitRelativePath = path;
     }
 
     setFileSize(size) {
-        this.fileSize = size
+
+        this.fileSize = size;
     }
 
     get maxSize() {
-        return this.maxFileSize
+
+        return this.maxFileSize;
     }
 
     fileSizeValidation() {
+
         return this.fileSize < this.maxFileSize
     }
 

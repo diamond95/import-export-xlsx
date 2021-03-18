@@ -28,11 +28,11 @@ export default class Import extends File {
      * 
      * @param {String} param 
      * @description Function for check if the given param is instance of this class
+     * @type static
      * @returns Boolean
      */
-    checkInstance(param) {
-        return param instanceof Import
-    }
+     static checkInstance = param => (param instanceof Import)
+
 
     /**
      * 
@@ -124,10 +124,8 @@ export default class Import extends File {
      * @description Checks if imported file is too big 
      * @returns Boolean
      */
-    isAppropriateSize() {
-
-      return super.fileSizeValidation();
-    }
+    isAppropriateSize = () => super.fileSizeValidation()
+    
 
     /**
      * @returns Imported data from Excel sheet
